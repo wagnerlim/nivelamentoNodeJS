@@ -1,0 +1,22 @@
+{
+  "name": "nivelamentonodejs",
+  "version": "1.0.0",
+  "description": "Ensianamentos basicos de javascript com node",
+  "main": "index.js",
+  "type": "module",
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wagnerlim/nivelamentoNodeJS.git"
+  },
+  "author": "Wagner Lima",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wagnerlim/nivelamentoNodeJS/issues"
+  },
+  "homepage": "https://github.com/wagnerlim/nivelamentoNodeJS#readme",
+  "engines": {"node": "19.3.0"}
+}
