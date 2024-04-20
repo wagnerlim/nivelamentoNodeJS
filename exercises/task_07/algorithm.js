@@ -9,8 +9,12 @@
 //* Validações importantes!
 //* Validar se é um número inteiro.
 
-//? Se for igual ao número lido deverá retornar a seguinte mensagem: Número gerado "X", Você adivinhou o número que estou pensando;
-//? Se for diferente disso o console deve apresentar:  Número gerado "X" você errou o número que estou pensando.
+//? Ex 10;
+//? {lista:[0,1,2,3,4,5,6,7,8,9,10],
+//? decrescente:[10,9,7,8,6,5,4,3,2,1,0],
+//? crescente:[0,1,2,3,4,5,6,7,8,9,10],
+//? pares:[0,2,4,6,8,10],
+//? impares:[1,3,7,9]},
 
 const task07 = () => {};
 
