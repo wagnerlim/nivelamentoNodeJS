@@ -1,5 +1,5 @@
 //! Exercicio 4
-//* Crie um algoritimo que leia a cotação do dolar e um valor X, e então converta o valord para dolar 
+//* Crie um algoritimo que leia a cotação do dolar e um valor X, e então converta o valord para dolar
 
 //* Validações importantes!
 //* Validar se os valores são númericos.
@@ -13,13 +13,15 @@ const task04 = (valorDolar, valorComprado) => {
   valorComprado = Number(valorComprado);
 
   if (isNaN(valorDolar) || isNaN(valorComprado)) {
-    throw new Error("Caracteres invalidos! Inserir apenas numeros.")
+    throw new Error("Caracteres invalidos! Inserir apenas numeros.");
   }
 
   const cotacao = Math.ceil(valorComprado / valorDolar);
 
-  return cotacao.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-
+  return cotacao.toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
 };
 
-console.log('Cotação: >> ', task04(process.argv[2], process.argv[3]));
+console.log("Cotação: >> ", task04(process.argv[2], process.argv[3]));
