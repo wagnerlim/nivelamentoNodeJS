@@ -8,8 +8,19 @@
 //? Ex: 2000
 //? Resp: ano atual 2024, idade: 24
 
-const task02 = () => {
-  //* Escreva sua solução aqui
+const task02 = (anoDigitado) => {
+  const anoAtual = new Date().getFullYear();
+  anoDigitado = Number(anoDigitado);
+
+  if (typeof anoDigitado != "number") {
+    console.log("Digitar apenas numeros");
+  }
+  else if (anoDigitado > anoAtual && anoDigitado < 1900) {
+    console.log("Ano invalido!");
+  }
+
+  return anoAtual - anoDigitado;
+
 };
 
-task02();
+console.log(`${anoAtual} + Idade :>> `, task02(process.argv[2]));
