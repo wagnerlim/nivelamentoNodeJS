@@ -18,9 +18,10 @@ const task02 = (anoDigitado) => {
   else if (anoDigitado > anoAtual && anoDigitado < 1900) {
     console.log("Ano invalido!");
   }
+  const idade = anoAtual - anoDigitado;
 
-  return anoAtual - anoDigitado;
+  return `Ano atual: ${anoAtual}, idade: ${idade}`;
 
 };
 
-console.log(`${anoAtual} + Idade :>> `, task02(process.argv[2]));
+console.log(task02(process.argv[2]));
