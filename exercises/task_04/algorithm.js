@@ -8,8 +8,18 @@
 //? Ex: 5.19, 5000
 //? Resp: $ 964,25
 
-const task04 = () => {
-  //* Escreva sua solução aqui
+const task04 = (valorDolar, valorComprado) => {
+  valorDolar = Number(valorDolar);
+  valorComprado = Number(valorComprado);
+
+  if (isNaN(valorDolar) || isNaN(valorComprado)) {
+    throw new Error("Caracteres invalidos! Inserir apenas numeros.")
+  }
+
+  const cotacao = Math.ceil(valorComprado / valorDolar);
+
+  return cotacao.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+
 };
 
-task04();
+console.log('Cotação: >> ', task04(process.argv[2], process.argv[3]));

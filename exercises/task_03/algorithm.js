@@ -12,7 +12,7 @@ const task03 = (salarioPorHora, horasTrabalhadas) => {
   if (isNaN(salarioPorHora) || isNaN(horasTrabalhadas)) {
     throw new Error("Caracteres invalidos! Digitar apenas numeros.")
   }
-  
+
   const salario = salarioPorHora * horasTrabalhadas;
 
   return salario.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
