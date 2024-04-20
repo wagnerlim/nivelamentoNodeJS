@@ -6,7 +6,7 @@
 //* No console da resposta a formatação deve ser feita através da função: toLocaleString('en-US', { style: 'currency', currency: 'USD' }).
 
 //? Ex: 5.19, 5000
-//? Resp: R$ 964,25
+//? Resp: $ 964,25
 
 const task04 = () => {
   //* Escreva sua solução aqui
