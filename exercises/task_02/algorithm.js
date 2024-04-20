@@ -12,16 +12,13 @@ const task02 = (anoDigitado) => {
   const anoAtual = new Date().getFullYear();
   anoDigitado = Number(anoDigitado);
 
-  //! A logica para validação é valida mas na linha 13 você converte a variavel anoDigitado para número
-  //! Isso faz com que mesmo que digite uma string o JS interpreta que é um número então ele nunca entra dentro do if
-  //! Porque ele só entra no if se for diferente de número!
-  if (typeof anoDigitado != "number") {
-    console.log("Digitar apenas numeros");
+
+  if (isNaN(anoDigitado)) {
+    throw new Error("Digitar apenas numeros");
   }
-  //! Essa validação está errada aqui você diz que o ano digitado tem que ser maior que o ano atual
-  //! & anoDigitado tem que ser menor que 1900
-  else if (anoDigitado > anoAtual && anoDigitado < 1900) {
-    console.log("Ano invalido!");
+
+  else if (anoDigitado > anoAtual || anoDigitado < 1900) {
+    throw new Error("Ano invalido!");
   }
   const idade = anoAtual - anoDigitado;
 
