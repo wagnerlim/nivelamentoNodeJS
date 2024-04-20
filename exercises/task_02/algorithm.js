@@ -12,7 +12,6 @@ const task02 = (anoDigitado) => {
   const anoAtual = new Date().getFullYear();
   anoDigitado = Number(anoDigitado);
 
-
   if (isNaN(anoDigitado)) {
     throw new Error("Digitar apenas numeros");
   }

@@ -8,8 +8,15 @@
 //? Ex: 128,40
 //? Resp: R$ 5.120,00
 
-const task03 = () => {
-  //* Escreva sua solução aqui
+const task03 = (salarioPorHora, horasTrabalhadas) => {
+  if (isNaN(salarioPorHora) || isNaN(horasTrabalhadas)) {
+    throw new Error("Caracteres invalidos! Digitar apenas numeros.")
+  }
+  
+  const salario = salarioPorHora * horasTrabalhadas;
+
+  return salario.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+
 };
 
-task03();
+console.log('Salario: >> ', task03(process.argv[2], process.argv[3]));
