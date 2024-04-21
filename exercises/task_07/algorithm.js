@@ -47,11 +47,19 @@ const pares = (numero) => {
   return pares.filter(function (pares) {
     if (pares % 2 == 0) {
       return true;
-    } else {
-      return false;
     }
   });
 };
+
+const impares = (numero) => {
+    const impares = generateList(numero);
+  
+    return impares.filter(function (impares) {
+      if (impares % 2 == 1) {
+        return true;
+      }
+    });
+  };
 
 const task07 = (numero) => {
   if (isNaN(numero)) {
@@ -59,15 +67,20 @@ const task07 = (numero) => {
   }
 
   const resultadoFinal = {
-    lista: [],
-    decrescente: [],
-    crescente: [],
-    pares: [],
-    impares: [],
+    // lista: [],
+    // decrescente: [],
+    // crescente: [],
+    // pares: [],
+    // impares: []
   };
   resultadoFinal.lista = generateList(numero);
   resultadoFinal.decrescente = decrescente(numero);
   resultadoFinal.crescente = crescente(numero);
+  resultadoFinal.pares = pares(numero);
+  resultadoFinal.impares = impares(numero);
+  resultadoFinal.sortido = generateList(numero).sort();
+  //*JSON.stringify(resultadoFinal, null, 4); - Mostra todos os registros.
+  //*console.table(resultadoFinal); - Transforma o resultado em tabela.
 
   console.log("resultadoFinal :>> ", resultadoFinal);
 };
