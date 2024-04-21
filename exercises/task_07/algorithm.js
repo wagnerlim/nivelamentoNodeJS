@@ -33,33 +33,46 @@ const decrescente = (numero) => {
   return decrescente;
 };
 
-const crescente = (numero) => {
-  const crescente = generateList(numero);
+// const crescente = (numero) => {
+//   const crescente = generateList(numero);
 
-  crescente.sort((a, b) => a - b);
+//   crescente.sort((a, b) => a - b);
+//   return crescente;
+// };
 
-  return crescente;
-};
+// const pares = (numero) => {
+//   const pares = generateList(numero);
 
-const pares = (numero) => {
-  const pares = generateList(numero);
+//   return pares.filter(function (pares) {
+//     if (pares % 2 == 0) {
+//       return true;
+//     }
+//   });
+// };
 
-  return pares.filter(function (pares) {
-    if (pares % 2 == 0) {
+// const impares = (numero) => {
+//   const impares = generateList(numero);
+
+//   return impares.filter(function (impares) {
+//     if (impares % 2 == 1) {
+//       return true;
+//     }
+//   });
+// };
+
+const imparesOuPares = (numero, parOuImpar) => {
+  const lista = generateList(numero);
+  return lista.filter(function (numero) {
+    if (parOuImpar === "par") {
+      if (numero % 2 == parOuImpar) {
+        return true;
+      }
+    }
+    if (numero % 2 == parOuImpar) {
       return true;
     }
   });
 };
-
-const impares = (numero) => {
-    const impares = generateList(numero);
-  
-    return impares.filter(function (impares) {
-      if (impares % 2 == 1) {
-        return true;
-      }
-    });
-  };
 
 const task07 = (numero) => {
   if (isNaN(numero)) {
@@ -75,14 +88,15 @@ const task07 = (numero) => {
   };
   resultadoFinal.lista = generateList(numero);
   resultadoFinal.decrescente = decrescente(numero);
-  resultadoFinal.crescente = crescente(numero);
-  resultadoFinal.pares = pares(numero);
-  resultadoFinal.impares = impares(numero);
+  //   resultadoFinal.crescente = crescente(numero);
+  resultadoFinal.crescente = generateList(numero);
+  resultadoFinal.pares = imparesOuPares(numero, 0);
+  resultadoFinal.impares = imparesOuPares(numero, 1);
   resultadoFinal.sortido = generateList(numero).sort();
   //*JSON.stringify(resultadoFinal, null, 4); - Mostra todos os registros.
   //*console.table(resultadoFinal); - Transforma o resultado em tabela.
 
-  console.log("resultadoFinal :>> ", resultadoFinal);
+  return resultadoFinal;
 };
 
 task07(process.argv[2]);
