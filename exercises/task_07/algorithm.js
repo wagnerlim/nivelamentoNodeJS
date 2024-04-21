@@ -1,7 +1,7 @@
 //! Exercicio 7
 //* Faça um algoritimo que leia um número Inteiro, A partir disso Faça ele retornar as seguintes informações no formato de um Objeto:
 //* A Lista de números até chegar nele (Em qualquer ordenação).
-//* A lista desses números em ordem decrescente (Do maior para o menor),
+//* A lista desses números em ordem s (Do maior para o menor),
 //* A lista desses números em ordem crescente (Do menor para o maior),
 //* Todos os números pares dessa lista (Do menor para o maior),
 //* Todos os números impares dessa lista (Do menor para o maior),
@@ -10,12 +10,66 @@
 //* Validar se é um número inteiro.
 
 //? Ex 10;
-//? {lista:[0,1,2,3,4,5,6,7,8,9,10],
+//? {lista:[0,1,2,3,4,5,6,7,8,9,10], ok
 //? decrescente:[10,9,7,8,6,5,4,3,2,1,0],
 //? crescente:[0,1,2,3,4,5,6,7,8,9,10],
 //? pares:[0,2,4,6,8,10],
 //? impares:[1,3,7,9]},
 
-const task07 = () => {};
+const generateList = (numero) => {
+  const lista = [];
 
-task07();
+  for (let index = 0; index <= numero; index++) {
+    lista.push(index);
+  }
+  return lista;
+};
+
+const decrescente = (numero) => {
+  const decrescente = generateList(numero);
+
+  decrescente.sort((a, b) => b - a);
+
+  return decrescente;
+};
+
+const crescente = (numero) => {
+  const crescente = generateList(numero);
+
+  crescente.sort((a, b) => a - b);
+
+  return crescente;
+};
+
+const pares = (numero) => {
+  const pares = generateList(numero);
+
+  return pares.filter(function (pares) {
+    if (pares % 2 == 0) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+};
+
+const task07 = (numero) => {
+  if (isNaN(numero)) {
+    throw new Error("Caracteres invalidos! Inserir apenas numeros.");
+  }
+
+  const resultadoFinal = {
+    lista: [],
+    decrescente: [],
+    crescente: [],
+    pares: [],
+    impares: [],
+  };
+  resultadoFinal.lista = generateList(numero);
+  resultadoFinal.decrescente = decrescente(numero);
+  resultadoFinal.crescente = crescente(numero);
+
+  console.log("resultadoFinal :>> ", resultadoFinal);
+};
+
+task07(process.argv[2]);
